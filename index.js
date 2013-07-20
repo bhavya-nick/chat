@@ -15,7 +15,7 @@ node.app.get("/", function(req, res){
 	var app_name = req.query.app;
     var app = require('./apps/'+app_name+'/'+app_name+'.js');
     
-    res.send(app.execute(req));
+    res.send(app[app_name].execute(req));
 });
  
 node.app.listen(node.port);
